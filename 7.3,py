@@ -1,0 +1,7 @@
+from easygui import *
+import operator
+calc = {"+":operator.add,"-":operator.sub,"*": operator.mul}
+arv1 = integerbox(msg="Sisestage esimene täisarv lõigus 1-10:",lowerbound=1, upperbound=10)
+arv2 = integerbox(msg="Sisestage esimene täisarv lõigus 1-10:",lowerbound=1, upperbound=10)
+tehe = buttonbox(msg='Valige tehe:', choices=('+', '-', '*'))
+msgbox(msg="Tehte tulemus on {}.".format(calc[tehe](arv1,arv2)))
