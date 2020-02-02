@@ -16,3 +16,17 @@ print("Retseptid, milleks on vaja maasikaid ja suhkrut:")
 for retsept  in retseptid_tabel:
     if "suhkur" in retsept and "maasikad" in retsept:
         print(retsept)
+        
+##################################################################################
+
+retseptid_tabel = []
+with open("retseptid.txt", encoding="UTF-8") as fail:
+    for rida in fail:
+        koostisosad = []
+        osad = rida.split(",")
+        for osa in osad:
+            koostisosad.append(osa.strip())
+        retseptid_tabel.append(koostisosad)
+for i in retseptid_tabel:
+    if 'suhkur' in i and 'maasikad' in i:
+        print(i)
