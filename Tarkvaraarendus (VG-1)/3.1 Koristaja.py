@@ -18,3 +18,19 @@ for korrus, toad in enumerate(tubade_tabel):
         for tuba in toad:
             if (tuba % 2) == 0:
                 print(tuba)
+                
+###############################################################################
+
+tubade_tabel = []
+with open("toad.txt", encoding="UTF-8") as fail:
+    for rida in fail:
+        korruse_toad = []
+        osad = rida.split()
+        for osa in osad:
+            if int(osa) % 2 == 0:
+                korruse_toad.append(int(osa))
+        tubade_tabel.append(korruse_toad)
+for i in tubade_tabel:
+    if tubade_tabel.index(i) % 2 != 0:
+        for a in i:
+            print(a)
