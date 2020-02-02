@@ -25,3 +25,25 @@ if eesti > soome:
     print("Eesti võitis {}-{}".format(eesti,soome))
 else:
     print("Soome võitis {}-{}".format(soome,eesti))
+
+#################################
+
+tulemuste_tabel = []
+with open("tulemused.txt", encoding="UTF-8") as fail:
+    for rida in fail:
+        seti_punktid = []
+        osad = rida.split()
+        for osa in osad:
+            seti_punktid.append(int(osa))
+        tulemuste_tabel.append(seti_punktid)
+eesti = 0
+soome = 0
+for i in tulemuste_tabel:
+    if i[0] > i[1]:
+        eesti += 1
+    else:
+        soome += 1
+if eesti > soome:
+    print("Eesti võitis {}-{}".format(eesti, soome))
+else:
+    print("Soome võitis {}-{}".format(soome, eesti))
