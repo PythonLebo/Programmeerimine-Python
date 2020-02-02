@@ -31,3 +31,62 @@ def voitis_taismangu(t):
                 return False
 
     return True
+
+#####################################################################################
+
+#Nurkademäng
+
+def voitis_nurkademangu(i):
+    l = 0
+    f = 0
+    for a in i:
+        if l == 0:
+            if a[0] == "X" and a[4] == "X":
+                f += 1
+        if l == 4:
+            if a[0] == "X" and a[4] == "X":
+                f += 1
+            l += 1
+    if f == 2:
+        return True
+    else:
+        return False
+#Peadiagonaal
+  
+def x_peadiagonaalil(i):
+    l = 0
+    f = 0
+    for a in i:
+        if a[l] == "X":
+            f += 1
+        l += 1
+    return int(f)
+#Kõrvaldiagonaal
+
+def x_korvaldiagonaalil(i):
+    l = 4
+    f = 0
+    for a in i:
+        if a[l] == "X":
+            f += 1
+        l -= 1
+    return int(f)
+#Diagonaalidemäng
+
+def voitis_diagonaalidemangu(i):
+    if x_peadiagonaalil(i) + x_korvaldiagonaalil(i) == 10:
+        return True
+    else:
+        return False
+#Täismäng
+
+def voitis_taismangu(i):
+    g = 0
+    for a in i:
+        f = 0
+        f = a.count("X")
+        g += f
+    if g == 25:
+        return True
+    else:
+        return False

@@ -29,3 +29,26 @@ for raamat in kirjandus_tabel:
         print("{} - {} päeva".format(raamat[0],päev))
 
 print(round(aeg,1))
+
+################################################################################################
+
+kirjandus_tabel = []
+with open("raamatud.txt", encoding="UTF-8") as fail:
+    for rida in fail:
+        raamat = []
+        osad = rida.split(":")
+        pealkiri = osad[0].strip()
+        leheküljed = int(osad[1].strip())
+        aeg = leheküljed*2
+        raamat.append(pealkiri)
+        raamat.append(leheküljed)
+        raamat.append(aeg)
+        kirjandus_tabel.append(raamat)
+koguaeg = 0
+print("Raamatud, mille lugemiseks kulub rohkem kui neli päeva:")
+for i in kirjandus_tabel:
+    paev = int(i[2]/120) + (i[2]% 120 > 0)
+    koguaeg += i[2]
+    if paev > 4:
+        print("{} - {} päeva".format(i[0], paev))
+print("Kõigi raamatute lugemiseks kulub {} h.".format(round(koguaeg/60, 1)))

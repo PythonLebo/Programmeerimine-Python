@@ -15,3 +15,16 @@ for i,rida in enumerate(file):
 file.close()
 
 print("Suurim summa on failis {}. real ja see on {}.".format(ridaB,biggest))
+
+#######################################################################################
+
+failn = input("Sisestage failinimi: ")
+arvud = []
+with open(failn, encoding="UTF-8") as fail:
+    for rida in fail:
+        summa = 0
+        osad = rida.split()
+        for osa in osad:
+            summa += int(osa)   
+        arvud.append(summa)
+print("Suurim summa on failis {}. real ja see on {}.".format(arvud.index(max(arvud)) + 1, max(arvud)))
