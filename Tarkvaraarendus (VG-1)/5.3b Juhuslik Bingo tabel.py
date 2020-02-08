@@ -5,7 +5,6 @@ def juhuslik_bingo():
         randNumbs = sample(range(a*15+1, a*15+16), 5)
         array.append(randNumbs)
     return [list(a) for a in zip(*array)]
-print(juhuslik_bingo())
 #####################################################
 def juhuslik_bingo():
     from random import sample
