@@ -1,3 +1,22 @@
+import math
+from collections import defaultdict
+def sorteeri(string):
+    ret = defaultdict(list)
+    with open(string) as file:
+        for rida in file.read().splitlines():
+            array = rida.split(";")
+            ret[math.floor(int(array[2])*0.1)*10].append(array)
+    return ret
+
+def kuva(dict):
+    for y in sorted(dict):
+        val,biggest,arr = dict[y],0,list 
+        for a in val:
+            if int(a[3]) > biggest:
+                biggest,arr = int(a[3]),a
+        print(f'{y}: {len(val)} album(it) ({arr[0]} - {arr[1]})')
+kuva(sorteeri("albumid.txt"))
+#################################################################
 def sorteeri(q):
     e = {}
     with open(q, encoding="UTF-8") as fail:
