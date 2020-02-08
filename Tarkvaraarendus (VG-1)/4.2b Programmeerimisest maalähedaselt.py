@@ -1,4 +1,14 @@
 import csv
+all, biggest, name = 0, 0, str
+with open("maalähedane.csv") as fail:
+    for rida in csv.reader(fail, delimiter=";"):
+        temp = sum(map(int, rida[1:]))
+        all += temp
+        if temp > biggest:
+            biggest, name = temp, rida[0]
+print(f'Kõige rohkem osalejaid - {name}, {biggest} inimest.\nKokku on kursusel osalenud {all} inimest')
+#######################################################################################################
+import csv
 ml = []
 with open("maalähedane.csv", encoding="UTF-8") as fail:
     csvr = csv.reader(fail, delimiter=';')
