@@ -1,3 +1,10 @@
+with open("tehnika.txt") as file:
+    for rida in file.read().splitlines():
+        array = rida.split()
+        dif = int(array[7]) - int(array[1])
+        if dif > 10:
+            print(f'{array[0]} - {dif}%')
+###################################################
 tehnika = []
 with open("tehnika.txt", encoding="UTF-8") as fail:
     for rida in fail:
